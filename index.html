@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANA - Valencia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/lazoNegro.jpg" type="image/x-icon">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+</head>
+<body>
+    <header>
+        <h1>Alerta por DANA en Valencia</h1>
+        <p>Mantente informado y toma precauciones ante la situación climática.</p>
+    </header>
+    
+    <main>
+        <section id="emergencia">
+            <h2>Teléfono de Emergencias</h2>
+            <p>En caso de emergencia, llama al <strong>112</strong>.</p>
+            <p>Informar de persona desaparecida <strong>900 365 112</strong>.</p>
+            <p>Cruz Roja apoyo psicológico <strong>900 202 020</strong>.</p>
+        </section>
+
+        <section id="advertencias">
+            <h2>Advertencias</h2>
+            <ul>
+                <li>Evita desplazamientos innecesarios.</li>
+                <li>Aléjate de ríos, barrancos y zonas inundables.</li>
+                <li>Permanece atento a las instrucciones de las autoridades.</li>
+            </ul>
+        </section>
+
+        <section id="precauciones">
+            <h2>Precauciones</h2>
+            <ul>
+                <li>Asegura objetos en exteriores que puedan ser arrastrados por el viento.</li>
+                <li>Mantén una linterna y provisiones en caso de corte de luz.</li>
+                <li>Ten a mano el teléfono de emergencias y documentos importantes.</li>
+            </ul>
+        </section>
+
+        <section id="voluntarios">
+            <h2>Voluntarios</h2>
+            <ul>
+                <li>Material básico: palas, botas, guantes y mascarillas</li>
+                <li>Pueblos Más Afectados: Paiporta, Catarroja, Massanasa, Alfafar, Benetúser, Picanya, Torrent, Alacuas, Aldaya, Utiel, Requena ...</li>
+                <li>Acceso: Andando mediante puentes o con autobuses de la Generatiltat Valenciana.</li>
+                <li>Ofrece tu tiempo y habilidades para colaborar en las labores de apoyo, toda ayuda es buena.</li>
+            </ul>
+        </section>        
+
+        <section id="fuentes">
+            <h2>Fuentes Verídicas</h2>
+            <ul>
+                <li><a href="https://www.aemet.es/es/portada" target="_blank">AEMET - Agencia Estatal de Meteorología</a></li>
+                <li><a href="https://www.proteccioncivil.es/" target="_blank">Protección Civil</a></li>
+                <li><a href="https://www.valencia.es/es" target="_blank">Ayuntamiento de Valencia</a></li>
+                <li><a href="https://elpais.com/" target="_blank">El Pais</a></li>
+            </ul>
+        </section>
+
+        <section id="clima">
+            <h2>Clima en Tiempo Real</h2>
+            <div id="weather-info">
+                <p><strong>Temperatura:</strong> 24°C</p>
+                <p><strong>Estado:</strong> Parcialmente nublado</p>
+            </div>
+            <h3>Mapa de Precipitaciones</h3>
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Información actualizada sobre la DANA en Valencia. &copy; 2024</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicialización del mapa
+        const map = L.map('map').setView([39.4699, -0.3763], 10); // Coordenadas de Valencia
+
+        // Capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Función para obtener los datos de precipitaciones
+        async function getPrecipitationData() {
+            const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=39.4699&longitude=-0.3763&hourly=precipitation_sum');
+            const data = await response.json();
+            displayPrecipitation(data);
+        }
+
+        // Función para mostrar las precipitaciones en el mapa
+        function displayPrecipitation(data) {
+            const precipitation = data.hourly.precipitation_sum; // Datos de precipitaciones
+            const time = data.hourly.time; // Tiempos de las predicciones
+
+            // Ejemplo de visualización de datos
+            for (let i = 0; i < precipitation.length; i++) {
+                if (precipitation[i] > 0) {
+                    L.marker([39.4699, -0.3763]).addTo(map)
+                        .bindPopup(`Precipitación: ${precipitation[i]} mm<br>Hora: ${time[i]}`)
+                        .openPopup();
+                }
+            }
+        }
+
+        // Llama a la función para obtener datos al cargar
+        getPrecipitationData();
+    </script>
+</body>
+</html>

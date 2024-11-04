@@ -1,0 +1,196 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración general */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #374151; /* Color gris oscuro */
+    background-color: #f3f4f6; /* Fondo gris claro */
+    padding: 20px;
+}
+
+/* Estilos del header */
+header {
+    text-align: center;
+    background-color: #ef4444; /* Rojo suave */
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Texto más grande */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+/* Estilos para el main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado entre secciones */
+}
+
+/* Estilos para cada sección */
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra de tarjeta */
+}
+
+section h2 {
+    font-size: 1.75rem; /* Tamaño de letra más grande */
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}
+
+/* Estilos de encabezados específicos */
+#advertencias h2 {
+    color: #eab308; /* Color amarillo oscuro para Advertencias */
+    border-bottom: 2px solid #eab308; /* Línea debajo del título en color amarillo */
+}
+
+#precauciones h2 {
+    color: #d97706; /* Color naranja oscuro para Precauciones */
+    border-bottom: 2px solid #d97706; /* Línea debajo del título en color naranja */
+}
+
+#fuentes h2 {
+    color: #0284c7; /* Color azul oscuro para Fuentes Verídicas */
+    border-bottom: 2px solid #0284c7; /* Línea debajo del título en color azul */
+}
+
+#clima h2 {
+    color: #b91c1c; /* Color rojo oscuro para Clima en Tiempo Real */
+    border-bottom: 2px solid #b91c1c; /* Línea debajo del título en color rojo */
+}
+
+/* Estilos de contenido de emergencia */
+#emergencia p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b91c1c; /* Rojo oscuro */
+}
+
+/* Estilos para advertencias y precauciones */
+#advertencias {
+    background-color: #fefcbf; /* Fondo amarillo claro */
+    border-left: 5px solid #eab308; /* Línea de borde */
+}
+
+#precauciones {
+    background-color: #fffbeb; /* Fondo beige claro */
+    border-left: 5px solid #d97706; /* Línea de borde */
+}
+
+/* Estilos para la sección de fuentes verídicas */
+#fuentes {
+    background-color: #e0f2fe; /* Fondo azul claro */
+    border-left: 5px solid #0284c7; /* Línea de borde azul */
+    color: #0f172a; /* Texto azul oscuro */
+}
+
+#fuentes a {
+    color: #0284c7; /* Azul claro */
+}
+
+#fuentes a:hover {
+    color: #0369a1; /* Azul más oscuro en hover */
+}
+
+/* Estilo para la sección de clima en tiempo real */
+#clima {
+    background-color: #fef2f2; /* Fondo rosa claro */
+    border-left: 5px solid #b91c1c; /* Línea de borde rojo */
+    color: #6b7280; /* Texto gris oscuro */
+}
+
+#clima #weather-info {
+    font-size: 1rem;
+    color: #4b5563; /* Texto gris intermedio */
+}
+
+#weather-info p {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Estilos para la sección de voluntarios */
+#voluntarios {
+    background-color: #e6fffa; /* Fondo verde claro */
+    border-left: 5px solid #38a169; /* Línea de borde verde oscuro */
+    color: #2f855a; /* Texto verde oscuro */
+}
+
+#voluntarios h2 {
+    color: #2f855a; /* Color verde oscuro para Voluntarios */
+    border-bottom: 2px solid #38a169; /* Línea debajo del título en color verde */
+}
+
+/* Listas estilizadas */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #374151; /* Texto gris oscuro */
+}
+
+/* Estilos de enlaces */
+a {
+    color: #3b82f6; /* Azul vibrante */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #1d4ed8; /* Azul más oscuro */
+    text-decoration: underline;
+}
+
+ /* Estilo para el mapa */
+ #map {
+    height: 400px; /* Altura del mapa */
+    width: 100%; /* Ancho del mapa */
+}
+
+/* Estilos del pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.875rem; /* Texto más pequeño */
+    color: #6b7280; /* Gris claro */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 640px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        padding: 15px;
+    }
+}
