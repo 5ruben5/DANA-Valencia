@@ -31,8 +31,5 @@ La página utiliza la biblioteca Leaflet para mostrar un mapa interactivo de las
 ## Sección de Imágenes
 
 ### Imagnes:
-- ![img1](https://github.com/user-attachments/assets/12153184-1b01-4df7-a4cf-b1d70cf7d1e7)
-- ![img2](https://github.com/user-attachments/assets/531bb27d-1bc9-4018-8302-f9b4a4aafe7b)
-- ![img3](https://github.com/user-attachments/assets/7a6cc4ce-a1b2-443b-93d4-a295057dec35)
-- ![img4](https://github.com/user-attachments/assets/8172e08c-e22a-46cb-aca6-a79a2ce852eb)
+- ![img1](https://github.com/user-attachments/assets/12153184-1b01-4df7-a4cf-b1d70cf7d1e7) ![img2](https://github.com/user-attachments/assets/531bb27d-1bc9-4018-8302-f9b4a4aafe7b) ![img3](https://github.com/user-attachments/assets/7a6cc4ce-a1b2-443b-93d4-a295057dec35) ![img4](https://github.com/user-attachments/assets/8172e08c-e22a-46cb-aca6-a79a2ce852eb)
 
